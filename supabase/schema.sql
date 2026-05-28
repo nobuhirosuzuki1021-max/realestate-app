@@ -21,6 +21,12 @@ CREATE TABLE IF NOT EXISTS properties (
 
 ALTER TABLE properties ENABLE ROW LEVEL SECURITY;
 
+-- 既存ポリシーを一旦削除（再実行時のエラー回避）
+DROP POLICY IF EXISTS "自分の物件のみ取得可能" ON properties;
+DROP POLICY IF EXISTS "自分の物件のみ登録可能" ON properties;
+DROP POLICY IF EXISTS "自分の物件のみ更新可能" ON properties;
+DROP POLICY IF EXISTS "自分の物件のみ削除可能" ON properties;
+
 -- SELECT: 自分が登録した物件のみ取得可能
 CREATE POLICY "自分の物件のみ取得可能"
   ON properties
