@@ -1,0 +1,407 @@
+/* ============================================================
+   リセット・ベーススタイル
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   共通メッセージ（エラー・成功）
+   ============================================================ */
+.message {
+  font-size: 0.875rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: 6px;
+  margin-bottom: 0.875rem;
+}
+.message.error {
+  color: #dc2626;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+}
+.message.success {
+  color: #16a34a;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+/* ============================================================
+   フォーム共通
+   ============================================================ */
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.375rem;
+  color: #374151;
+}
+.form-group input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  background: white;
+}
+.form-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ============================================================
+   ボタン共通
+   ============================================================ */
+.btn-primary {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-logout {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.btn-logout:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.btn-add {
+  padding: 0.5rem 1.125rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.btn-add:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-edit {
+  padding: 0.375rem 0.875rem;
+  background-color: white;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+  border-radius: 5px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.btn-edit:hover {
+  background-color: #eff6ff;
+}
+
+.btn-delete {
+  padding: 0.375rem 0.875rem;
+  background-color: white;
+  color: #dc2626;
+  border: 1px solid #dc2626;
+  border-radius: 5px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.btn-delete:hover {
+  background-color: #fef2f2;
+}
+
+.btn-delete-confirm {
+  padding: 0.3rem 0.75rem;
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-delete-confirm:hover {
+  background-color: #b91c1c;
+}
+
+.btn-cancel {
+  padding: 0.375rem 0.875rem;
+  background-color: white;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.btn-cancel:hover {
+  background-color: #f1f5f9;
+}
+
+/* ============================================================
+   認証画面（ログイン・会員登録）
+   ============================================================ */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 50%, #f8fafc 100%);
+}
+.auth-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+}
+.auth-logo {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.auth-card h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+.auth-subtitle {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin-bottom: 1.75rem;
+}
+.auth-link {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.auth-link a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   物件一覧画面
+   ============================================================ */
+.property-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+.property-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.property-list-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.user-email {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* ローディング */
+.loading {
+  text-align: center;
+  padding: 4rem 0;
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+/* 物件ゼロ件時 */
+.empty-state {
+  text-align: center;
+  padding: 5rem 1rem;
+  color: #64748b;
+}
+.empty-state p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+.empty-state .btn-primary {
+  display: inline-block;
+  width: auto;
+  padding: 0.75rem 2rem;
+}
+
+/* 物件グリッド */
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* 物件カード */
+.property-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.property-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+.property-card-image {
+  height: 140px;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+.property-card-body {
+  padding: 1.25rem;
+}
+.property-card-body h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+.property-rent {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 0.625rem;
+}
+.rent-unit {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #6b7280;
+}
+.property-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.property-tag {
+  padding: 0.25rem 0.625rem;
+  background-color: #f1f5f9;
+  color: #475569;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* カード下部のアクションボタン */
+.property-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+.delete-confirm {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.delete-confirm span {
+  font-size: 0.8rem;
+  color: #dc2626;
+}
+
+/* ============================================================
+   モーダル（物件登録・編集フォーム）
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 100;
+}
+.modal {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+}
+.modal h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+.form-actions .btn-primary {
+  flex: 1;
+}
+.form-actions .btn-cancel {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
